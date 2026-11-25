@@ -1,4 +1,4 @@
-# 🚀 CommercePilot AI
+# CommercePilot AI
 ### Enterprise Full-Stack E-Commerce & ERP Inventory System with Autonomous AI Features
 
 [![React](https://img.shields.io/badge/Frontend-React_19_%2B_TypeScript-61DAFB?logo=react&logoColor=black)](https://react.dev/)
@@ -10,7 +10,7 @@
 
 ---
 
-## 🌟 Executive Summary
+## Executive Summary
 
 **CommercePilot AI** is far more than a basic shopping website. It is an end-to-end commercial platform designed to model real-world enterprise business operations:
 1. **Customer-Facing Storefront**: High-converting, responsive shopping experience featuring live search, faceted category filters, variant tier selectors, stock availability badges, slide-over cart with free shipping threshold meter, encrypted checkout, and real-time package milestone tracking.
@@ -23,7 +23,7 @@
 
 ---
 
-## 📐 System Architecture
+## System Architecture
 
 ```mermaid
 flowchart TD
@@ -64,14 +64,14 @@ The application includes an **Instant Demo Role Switcher** on both the storefron
 
 | Role | Username | Password | Access Privileges |
 | :--- | :--- | :--- | :--- |
-| **👑 Administrator** | `admin` | `AdminPass123!` | Complete access to ERP, Inventory, Catalog Manager, Staff, Orders, and Analytics |
-| **🏬 Store Manager** | `manager` | `ManagerPass123!` | Catalog management, AI description generation, Orders, and Sales Analytics |
-| **📦 Warehouse Staff** | `warehouse` | `WarehousePass123!` | Stock adjustments, PO goods-receiving, and Movement ledger |
-| **🛍️ Customer** | `customer` | `CustomerPass123!` | Browsing, shopping bag, checkout, reviews, and personal order tracking |
+| ** Administrator** | `admin` | `AdminPass123!` | Complete access to ERP, Inventory, Catalog Manager, Staff, Orders, and Analytics |
+| ** Store Manager** | `manager` | `ManagerPass123!` | Catalog management, AI description generation, Orders, and Sales Analytics |
+| ** Warehouse Staff** | `warehouse` | `WarehousePass123!` | Stock adjustments, PO goods-receiving, and Movement ledger |
+| ** Customer** | `customer` | `CustomerPass123!` | Browsing, shopping bag, checkout, reviews, and personal order tracking |
 
 ---
 
-## ⚡ Core Real-World Business Workflows
+##  Core Real-World Business Workflows
 
 ### 1. Atomic Order Checkout & Stock Allocation
 - When a customer checks out, the backend executes a database transaction (`transaction.atomic()`):
