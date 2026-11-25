@@ -38,7 +38,7 @@ export const CheckoutPage: React.FC = () => {
         <p className="text-xs text-slate-500 mb-6">Add items from the catalog before proceeding to checkout.</p>
         <button
           onClick={() => navigate('/catalog')}
-          className="bg-indigo-600 text-white font-semibold text-xs px-5 py-2.5 rounded-xl"
+          className="bg-brand-600 text-white font-semibold text-xs px-5 py-2.5 rounded-xl"
         >
           Explore Catalog
         </button>
@@ -90,7 +90,7 @@ export const CheckoutPage: React.FC = () => {
           {/* Shipping Address */}
           <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-2xs space-y-4">
             <h2 className="text-sm font-bold uppercase tracking-wider text-slate-800 flex items-center gap-2">
-              <Truck className="w-4 h-4 text-indigo-600" />
+              <Truck className="w-4 h-4 text-brand-600" />
               <span>1. Shipping Information</span>
             </h2>
 
@@ -102,7 +102,7 @@ export const CheckoutPage: React.FC = () => {
                   required
                   value={formData.customer_name}
                   onChange={(e) => setFormData({ ...formData, customer_name: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-indigo-500"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-brand-500"
                 />
               </div>
 
@@ -113,7 +113,7 @@ export const CheckoutPage: React.FC = () => {
                   required
                   value={formData.customer_email}
                   onChange={(e) => setFormData({ ...formData, customer_email: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-indigo-500"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-brand-500"
                 />
               </div>
 
@@ -123,7 +123,7 @@ export const CheckoutPage: React.FC = () => {
                   type="tel"
                   value={formData.customer_phone}
                   onChange={(e) => setFormData({ ...formData, customer_phone: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-indigo-500"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-brand-500"
                 />
               </div>
 
@@ -134,7 +134,7 @@ export const CheckoutPage: React.FC = () => {
                   required
                   value={formData.address_line1}
                   onChange={(e) => setFormData({ ...formData, address_line1: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-indigo-500"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-brand-500"
                 />
               </div>
 
@@ -145,7 +145,7 @@ export const CheckoutPage: React.FC = () => {
                   required
                   value={formData.city}
                   onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-indigo-500"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-brand-500"
                 />
               </div>
 
@@ -156,7 +156,7 @@ export const CheckoutPage: React.FC = () => {
                   required
                   value={formData.state}
                   onChange={(e) => setFormData({ ...formData, state: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-indigo-500"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-brand-500"
                 />
               </div>
 
@@ -167,7 +167,7 @@ export const CheckoutPage: React.FC = () => {
                   required
                   value={formData.postal_code}
                   onChange={(e) => setFormData({ ...formData, postal_code: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-indigo-500"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-brand-500"
                 />
               </div>
 
@@ -178,7 +178,7 @@ export const CheckoutPage: React.FC = () => {
                   required
                   value={formData.country}
                   onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-indigo-500"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-brand-500"
                 />
               </div>
             </div>
@@ -188,10 +188,10 @@ export const CheckoutPage: React.FC = () => {
           <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-2xs space-y-4">
             <div className="flex items-center justify-between">
               <h2 className="text-sm font-bold uppercase tracking-wider text-slate-800 flex items-center gap-2">
-                <CreditCard className="w-4 h-4 text-indigo-600" />
+                <CreditCard className="w-4 h-4 text-brand-600" />
                 <span>2. Payment Details</span>
               </h2>
-              <span className="text-[10px] bg-emerald-50 text-emerald-700 font-semibold px-2 py-0.5 rounded border border-emerald-200 flex items-center gap-1">
+              <span className="text-xs bg-emerald-50 text-emerald-700 font-semibold px-2 py-0.5 rounded border border-emerald-200 flex items-center gap-1">
                 <ShieldCheck className="w-3 h-3 text-emerald-600" />
                 <span>256-Bit SSL Encrypted</span>
               </span>
@@ -203,12 +203,12 @@ export const CheckoutPage: React.FC = () => {
                 onClick={() => setFormData({ ...formData, payment_method: 'STRIPE_CARD' })}
                 className={`p-3 rounded-xl border text-left transition cursor-pointer ${
                   formData.payment_method === 'STRIPE_CARD'
-                    ? 'border-indigo-600 bg-indigo-50/70 text-indigo-900 font-bold'
+                    ? 'border-brand-600 bg-brand-50/70 text-brand-900 font-bold'
                     : 'border-slate-200 text-slate-700 hover:bg-slate-50'
                 }`}
               >
                 <span className="block text-xs font-semibold">Credit Card</span>
-                <span className="text-[10px] text-slate-500">Stripe / Visa / MC</span>
+                <span className="text-xs text-slate-500">Stripe / Visa / MC</span>
               </button>
 
               <button
@@ -216,12 +216,12 @@ export const CheckoutPage: React.FC = () => {
                 onClick={() => setFormData({ ...formData, payment_method: 'CASH_ON_DELIVERY' })}
                 className={`p-3 rounded-xl border text-left transition cursor-pointer ${
                   formData.payment_method === 'CASH_ON_DELIVERY'
-                    ? 'border-indigo-600 bg-indigo-50/70 text-indigo-900 font-bold'
+                    ? 'border-brand-600 bg-brand-50/70 text-brand-900 font-bold'
                     : 'border-slate-200 text-slate-700 hover:bg-slate-50'
                 }`}
               >
                 <span className="block text-xs font-semibold">Cash on Delivery</span>
-                <span className="text-[10px] text-slate-500">Pay on arrival</span>
+                <span className="text-xs text-slate-500">Pay on arrival</span>
               </button>
 
               <button
@@ -229,12 +229,12 @@ export const CheckoutPage: React.FC = () => {
                 onClick={() => setFormData({ ...formData, payment_method: 'BANK_TRANSFER' })}
                 className={`p-3 rounded-xl border text-left transition cursor-pointer ${
                   formData.payment_method === 'BANK_TRANSFER'
-                    ? 'border-indigo-600 bg-indigo-50/70 text-indigo-900 font-bold'
+                    ? 'border-brand-600 bg-brand-50/70 text-brand-900 font-bold'
                     : 'border-slate-200 text-slate-700 hover:bg-slate-50'
                 }`}
               >
                 <span className="block text-xs font-semibold">Bank Wire</span>
-                <span className="text-[10px] text-slate-500">Direct transfer</span>
+                <span className="text-xs text-slate-500">Direct transfer</span>
               </button>
             </div>
 
@@ -303,7 +303,7 @@ export const CheckoutPage: React.FC = () => {
                     />
                     <div className="overflow-hidden">
                       <p className="font-semibold text-slate-900 truncate">{it.product_name}</p>
-                      <p className="text-[11px] text-slate-500">Qty: {it.quantity} {it.variant_name ? `• ${it.variant_name}` : ''}</p>
+                      <p className="text-xs text-slate-500">Qty: {it.quantity} {it.variant_name ? `• ${it.variant_name}` : ''}</p>
                     </div>
                   </div>
                   <span className="font-bold text-slate-800 shrink-0">${Number(it.line_total).toFixed(2)}</span>
@@ -336,13 +336,13 @@ export const CheckoutPage: React.FC = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg shadow-indigo-200 flex items-center justify-center gap-2 text-sm transition cursor-pointer"
+              className="w-full bg-brand-600 hover:bg-brand-700 disabled:opacity-50 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg shadow-brand-200 flex items-center justify-center gap-2 text-sm transition cursor-pointer"
             >
               <Lock className="w-4 h-4" />
               <span>{loading ? 'Authorizing & Allocating Inventory...' : `Authorize & Place Order ($${grandTotal.toFixed(2)})`}</span>
             </button>
 
-            <p className="text-[11px] text-slate-400 text-center leading-relaxed">
+            <p className="text-xs text-slate-400 text-center leading-relaxed">
               By placing this order, inventory is deducted atomically from the distribution warehouse and an audit movement log is created.
             </p>
           </div>

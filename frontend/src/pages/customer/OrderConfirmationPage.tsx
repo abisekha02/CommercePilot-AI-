@@ -38,7 +38,7 @@ export const OrderConfirmationPage: React.FC = () => {
       <div className="my-8 bg-slate-50 border border-slate-200 rounded-2xl p-6 text-left max-w-lg mx-auto">
         <div className="flex items-center justify-between pb-4 border-b border-slate-200">
           <div>
-            <span className="text-[11px] uppercase tracking-wider font-semibold text-slate-400">Order Reference</span>
+            <span className="text-xs uppercase tracking-wider font-semibold text-slate-400">Order Reference</span>
             <div className="flex items-center gap-2 mt-0.5">
               <span className="text-base font-bold text-slate-900 font-mono">{orderNumber}</span>
               <button
@@ -83,7 +83,7 @@ export const OrderConfirmationPage: React.FC = () => {
       <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
         <Link
           to={`/track/${orderNumber}`}
-          className="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-xs px-6 py-3 rounded-xl shadow-md shadow-indigo-200 flex items-center justify-center gap-2 transition"
+          className="w-full sm:w-auto bg-brand-600 hover:bg-brand-700 text-white font-semibold text-xs px-6 py-3 rounded-xl shadow-md shadow-brand-200 flex items-center justify-center gap-2 transition"
         >
           <Truck className="w-4 h-4" />
           <span>Track Live Order Status</span>

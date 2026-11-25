@@ -105,7 +105,7 @@ export const ERPOrdersPage: React.FC = () => {
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse text-xs">
             <thead>
-              <tr className="bg-slate-50 border-b border-slate-200 text-slate-500 font-semibold uppercase tracking-wider text-[10px]">
+              <tr className="bg-slate-50 border-b border-slate-200 text-slate-500 font-semibold uppercase tracking-wider text-xs">
                 <th className="py-3.5 px-4">Order Reference</th>
                 <th className="py-3.5 px-4">Customer</th>
                 <th className="py-3.5 px-4">Placed Date</th>
@@ -121,7 +121,7 @@ export const ERPOrdersPage: React.FC = () => {
               {loading ? (
                 <tr>
                   <td colSpan={9} className="py-12 text-center text-slate-400">
-                    <RefreshCw className="w-6 h-6 animate-spin mx-auto text-indigo-600 mb-2" />
+                    <RefreshCw className="w-6 h-6 animate-spin mx-auto text-brand-600 mb-2" />
                     <span>Loading customer fulfillment queue...</span>
                   </td>
                 </tr>
@@ -137,9 +137,9 @@ export const ERPOrdersPage: React.FC = () => {
                     <td className="py-3 px-4 font-mono font-bold text-slate-900">{o.order_number}</td>
                     <td className="py-3 px-4">
                       <div className="font-bold text-slate-900">{o.customer_name}</div>
-                      <div className="text-[10px] text-slate-400">{o.customer_email}</div>
+                      <div className="text-xs text-slate-400">{o.customer_email}</div>
                     </td>
-                    <td className="py-3 px-4 font-mono text-[11px] text-slate-500">
+                    <td className="py-3 px-4 font-mono text-xs text-slate-500">
                       {new Date(o.created_at).toLocaleDateString()}
                     </td>
                     <td className="py-3 px-4 text-center font-bold text-slate-700">
@@ -149,12 +149,12 @@ export const ERPOrdersPage: React.FC = () => {
                       ${Number(o.total_amount).toFixed(2)}
                     </td>
                     <td className="py-3 px-4 text-center">
-                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
+                      <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
                         {o.payment_status_display}
                       </span>
                     </td>
                     <td className="py-3 px-4 text-center">
-                      <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full inline-flex items-center gap-1 ${
+                      <span className={`text-xs font-bold px-2.5 py-0.5 rounded-full inline-flex items-center gap-1 ${
                         o.status === 'DELIVERED'
                           ? 'bg-emerald-100 text-emerald-800'
                           : o.status === 'SHIPPED'
@@ -162,13 +162,13 @@ export const ERPOrdersPage: React.FC = () => {
                           : o.status === 'PROCESSING'
                           ? 'bg-amber-100 text-amber-800'
                           : o.status === 'REFUNDED'
-                          ? 'bg-purple-100 text-purple-800'
-                          : 'bg-indigo-100 text-indigo-800'
+                          ? 'bg-brand-100 text-brand-800'
+                          : 'bg-brand-100 text-brand-800'
                       }`}>
                         <span>{o.status_display}</span>
                       </span>
                     </td>
-                    <td className="py-3 px-4 font-mono text-[11px] text-slate-600">
+                    <td className="py-3 px-4 font-mono text-xs text-slate-600">
                       {o.tracking_number || '—'}
                     </td>
                     <td className="py-3 px-4 text-right">
@@ -178,7 +178,7 @@ export const ERPOrdersPage: React.FC = () => {
                           setNewStatus(o.status === 'CONFIRMED' ? 'PROCESSING' : o.status === 'PROCESSING' ? 'SHIPPED' : 'DELIVERED');
                           setTrackingNumber(o.tracking_number || `FX-${Math.floor(100000000 + Math.random() * 900000000)}-US`);
                         }}
-                        className="bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-semibold px-2.5 py-1 rounded-lg text-xs transition cursor-pointer"
+                        className="bg-brand-50 hover:bg-brand-100 text-brand-700 font-semibold px-2.5 py-1 rounded-lg text-xs transition cursor-pointer"
                       >
                         Update
                       </button>
@@ -198,7 +198,7 @@ export const ERPOrdersPage: React.FC = () => {
             <div className="flex justify-between items-center pb-3 border-b border-slate-100">
               <div>
                 <h3 className="font-bold text-sm text-slate-900">Update Order Status</h3>
-                <p className="text-[11px] text-slate-500">Order {selectedOrder.order_number} • {selectedOrder.customer_name}</p>
+                <p className="text-xs text-slate-500">Order {selectedOrder.order_number} • {selectedOrder.customer_name}</p>
               </div>
               <button
                 onClick={() => setSelectedOrder(null)}
@@ -259,7 +259,7 @@ export const ERPOrdersPage: React.FC = () => {
                 <button
                   type="submit"
                   disabled={updating}
-                  className="bg-indigo-600 hover:bg-indigo-700 disabled:opacity-40 text-white font-semibold px-4 py-2 rounded-xl text-xs shadow-xs cursor-pointer"
+                  className="bg-brand-600 hover:bg-brand-700 disabled:opacity-40 text-white font-semibold px-4 py-2 rounded-xl text-xs shadow-xs cursor-pointer"
                 >
                   {updating ? 'Updating...' : 'Publish Status Update'}
                 </button>

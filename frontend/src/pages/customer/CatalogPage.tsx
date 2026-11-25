@@ -82,7 +82,7 @@ export const CatalogPage: React.FC = () => {
           <select
             value={ordering}
             onChange={(e) => setOrdering(e.target.value)}
-            className="bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500"
           >
             <option value="-created_at">Newest Arrivals</option>
             <option value="base_price">Price: Low to High</option>
@@ -99,13 +99,13 @@ export const CatalogPage: React.FC = () => {
           <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-2xs space-y-6">
             <div className="flex items-center justify-between pb-3 border-b border-slate-100">
               <span className="font-bold text-xs uppercase tracking-wider text-slate-900 flex items-center gap-1.5">
-                <SlidersHorizontal className="w-3.5 h-3.5 text-indigo-600" />
+                <SlidersHorizontal className="w-3.5 h-3.5 text-brand-600" />
                 <span>Filters</span>
               </span>
               {(selectedCategory || search || minPrice || maxPrice) && (
                 <button
                   onClick={clearAllFilters}
-                  className="text-[11px] text-indigo-600 hover:text-indigo-800 font-semibold cursor-pointer"
+                  className="text-xs text-brand-600 hover:text-brand-800 font-semibold cursor-pointer"
                 >
                   Reset
                 </button>
@@ -119,22 +119,22 @@ export const CatalogPage: React.FC = () => {
                 <button
                   onClick={() => handleCategorySelect('')}
                   className={`w-full text-left px-2.5 py-1.5 rounded-lg text-xs font-medium transition flex items-center justify-between cursor-pointer ${
-                    !selectedCategory ? 'bg-indigo-50 text-indigo-700 font-semibold' : 'text-slate-600 hover:bg-slate-50'
+                    !selectedCategory ? 'bg-brand-50 text-brand-700 font-semibold' : 'text-slate-600 hover:bg-slate-50'
                   }`}
                 >
                   <span>All Categories</span>
-                  {!selectedCategory && <Check className="w-3 h-3 text-indigo-600" />}
+                  {!selectedCategory && <Check className="w-3 h-3 text-brand-600" />}
                 </button>
                 {categories.map((c) => (
                   <button
                     key={c.id}
                     onClick={() => handleCategorySelect(c.slug)}
                     className={`w-full text-left px-2.5 py-1.5 rounded-lg text-xs font-medium transition flex items-center justify-between cursor-pointer ${
-                      selectedCategory === c.slug ? 'bg-indigo-50 text-indigo-700 font-semibold' : 'text-slate-600 hover:bg-slate-50'
+                      selectedCategory === c.slug ? 'bg-brand-50 text-brand-700 font-semibold' : 'text-slate-600 hover:bg-slate-50'
                     }`}
                   >
                     <span>{c.name}</span>
-                    {selectedCategory === c.slug && <Check className="w-3 h-3 text-indigo-600" />}
+                    {selectedCategory === c.slug && <Check className="w-3 h-3 text-brand-600" />}
                   </button>
                 ))}
               </div>
@@ -176,7 +176,7 @@ export const CatalogPage: React.FC = () => {
         <div className="lg:col-span-3">
           {loading ? (
             <div className="h-64 flex flex-col items-center justify-center text-slate-400 gap-2">
-              <RefreshCw className="w-6 h-6 animate-spin text-indigo-600" />
+              <RefreshCw className="w-6 h-6 animate-spin text-brand-600" />
               <span className="text-xs font-medium">Loading catalog items...</span>
             </div>
           ) : products.length === 0 ? (
@@ -185,7 +185,7 @@ export const CatalogPage: React.FC = () => {
               <p className="text-xs text-slate-500 mb-4">Try clearing some filters or searching with another term.</p>
               <button
                 onClick={clearAllFilters}
-                className="bg-indigo-600 text-white text-xs font-semibold px-4 py-2 rounded-xl"
+                className="bg-brand-600 text-white text-xs font-semibold px-4 py-2 rounded-xl"
               >
                 Clear All Filters
               </button>
@@ -204,17 +204,17 @@ export const CatalogPage: React.FC = () => {
                       className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
                     />
                     {product.featured && (
-                      <span className="absolute top-3 left-3 bg-indigo-600 text-white text-[10px] font-bold uppercase px-2 py-0.5 rounded-full shadow-xs">
+                      <span className="absolute top-3 left-3 bg-brand-600 text-white text-xs font-bold uppercase px-2 py-0.5 rounded-full shadow-xs">
                         Featured
                       </span>
                     )}
                     {product.total_stock <= 5 && product.total_stock > 0 && (
-                      <span className="absolute top-3 right-3 bg-amber-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-xs">
+                      <span className="absolute top-3 right-3 bg-amber-500 text-white text-xs font-bold px-2 py-0.5 rounded-full shadow-xs">
                         Low Stock ({product.total_stock})
                       </span>
                     )}
                     {product.total_stock === 0 && (
-                      <span className="absolute top-3 right-3 bg-rose-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-xs">
+                      <span className="absolute top-3 right-3 bg-rose-600 text-white text-xs font-bold px-2 py-0.5 rounded-full shadow-xs">
                         Out of Stock
                       </span>
                     )}
@@ -230,7 +230,7 @@ export const CatalogPage: React.FC = () => {
                         </div>
                       </div>
                       <Link to={`/product/${product.slug}`}>
-                        <h3 className="text-sm font-semibold text-slate-900 group-hover:text-indigo-600 transition line-clamp-1">
+                        <h3 className="text-sm font-semibold text-slate-900 group-hover:text-brand-600 transition line-clamp-1">
                           {product.name}
                         </h3>
                       </Link>
@@ -241,13 +241,13 @@ export const CatalogPage: React.FC = () => {
 
                     <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
                       <div>
-                        <span className="text-[10px] text-slate-400 block">Price</span>
+                        <span className="text-xs text-slate-400 block">Price</span>
                         <span className="text-base font-bold text-slate-900">${Number(product.base_price).toFixed(2)}</span>
                       </div>
                       <button
                         onClick={() => addToCart(product.id, null, 1)}
                         disabled={product.total_stock === 0}
-                        className="bg-slate-900 hover:bg-indigo-600 disabled:opacity-30 text-white p-2.5 rounded-xl transition cursor-pointer shadow-xs"
+                        className="bg-slate-900 hover:bg-brand-600 disabled:opacity-30 text-white p-2.5 rounded-xl transition cursor-pointer shadow-xs"
                         title={product.total_stock === 0 ? "Out of Stock" : "Add to Cart"}
                       >
                         <ShoppingCart className="w-4 h-4" />

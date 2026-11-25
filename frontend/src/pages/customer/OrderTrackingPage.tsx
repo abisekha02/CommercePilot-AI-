@@ -76,14 +76,14 @@ export const OrderTrackingPage: React.FC = () => {
             placeholder="Enter your Order Reference (e.g. CP-2026-9042)"
             value={inputNum}
             onChange={(e) => setInputNum(e.target.value)}
-            className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-4 py-2.5 text-xs font-mono font-medium focus:ring-2 focus:ring-indigo-500"
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-4 py-2.5 text-xs font-mono font-medium focus:ring-2 focus:ring-brand-500"
           />
           <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
         </div>
         <button
           type="submit"
           disabled={loading}
-          className="bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white font-semibold text-xs px-6 py-2.5 rounded-xl transition cursor-pointer"
+          className="bg-brand-600 hover:bg-brand-700 disabled:opacity-50 text-white font-semibold text-xs px-6 py-2.5 rounded-xl transition cursor-pointer"
         >
           {loading ? 'Locating...' : 'Track Package'}
         </button>
@@ -96,14 +96,14 @@ export const OrderTrackingPage: React.FC = () => {
           <div className="flex gap-2">
             <button
               onClick={() => { setInputNum('CP-2026-9042'); handleTrack('CP-2026-9042'); }}
-              className="font-mono text-indigo-600 hover:underline cursor-pointer"
+              className="font-mono text-brand-600 hover:underline cursor-pointer"
             >
               CP-2026-9042 (Delivered)
             </button>
             <span>•</span>
             <button
               onClick={() => { setInputNum('CP-2026-9150'); handleTrack('CP-2026-9150'); }}
-              className="font-mono text-indigo-600 hover:underline cursor-pointer"
+              className="font-mono text-brand-600 hover:underline cursor-pointer"
             >
               CP-2026-9150 (Shipped)
             </button>
@@ -124,11 +124,11 @@ export const OrderTrackingPage: React.FC = () => {
           <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-2xs space-y-4">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100">
               <div>
-                <span className="text-[11px] text-slate-400 uppercase font-semibold">Order Reference</span>
+                <span className="text-xs text-slate-400 uppercase font-semibold">Order Reference</span>
                 <h2 className="text-xl font-bold text-slate-900 font-mono">{order.order_number}</h2>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-xs bg-indigo-50 text-indigo-700 border border-indigo-200 font-bold px-3 py-1 rounded-full capitalize">
+                <span className="text-xs bg-brand-50 text-brand-700 border border-brand-200 font-bold px-3 py-1 rounded-full capitalize">
                   {order.status_display}
                 </span>
                 <span className="text-xs bg-emerald-50 text-emerald-700 border border-emerald-200 font-bold px-3 py-1 rounded-full">
@@ -172,7 +172,7 @@ export const OrderTrackingPage: React.FC = () => {
                       isPassed
                         ? 'bg-emerald-600 text-white shadow-xs'
                         : isCurrent
-                        ? 'bg-indigo-600 text-white shadow-md shadow-indigo-200 animate-pulse'
+                        ? 'bg-brand-600 text-white shadow-md shadow-brand-200 animate-pulse'
                         : 'bg-slate-100 text-slate-400 border border-slate-200'
                     }`}>
                       {isPassed ? <CheckCircle2 className="w-5 h-5" /> : <Clock className="w-4 h-4" />}
@@ -182,7 +182,7 @@ export const OrderTrackingPage: React.FC = () => {
                       <h4 className={`text-xs font-bold ${isPassed || isCurrent ? 'text-slate-900' : 'text-slate-400'}`}>
                         {st.label}
                       </h4>
-                      <p className="text-[11px] text-slate-500 mt-0.5 leading-tight">{st.desc}</p>
+                      <p className="text-xs text-slate-500 mt-0.5 leading-tight">{st.desc}</p>
                     </div>
                   </div>
                 );
@@ -197,11 +197,11 @@ export const OrderTrackingPage: React.FC = () => {
               <div className="space-y-4">
                 {order.timeline.map((event) => (
                   <div key={event.id} className="flex items-start gap-3 text-xs">
-                    <div className="w-2 h-2 rounded-full bg-indigo-600 mt-1.5 shrink-0"></div>
+                    <div className="w-2 h-2 rounded-full bg-brand-600 mt-1.5 shrink-0"></div>
                     <div>
                       <div className="flex items-center gap-2">
                         <span className="font-bold text-slate-900">{event.title}</span>
-                        <span className="text-[10px] text-slate-400">{new Date(event.created_at).toLocaleString()}</span>
+                        <span className="text-xs text-slate-400">{new Date(event.created_at).toLocaleString()}</span>
                       </div>
                       <p className="text-slate-600 mt-0.5">{event.description}</p>
                     </div>
@@ -220,7 +220,7 @@ export const OrderTrackingPage: React.FC = () => {
                   <div key={it.id} className="py-2.5 flex items-center justify-between">
                     <div>
                       <p className="font-semibold text-slate-900">{it.product_name}</p>
-                      <p className="text-[11px] text-slate-400">SKU: {it.sku} • Qty: {it.quantity}</p>
+                      <p className="text-xs text-slate-400">SKU: {it.sku} • Qty: {it.quantity}</p>
                     </div>
                     <span className="font-bold text-slate-800">${Number(it.subtotal).toFixed(2)}</span>
                   </div>

@@ -49,7 +49,7 @@ export const ProductDetailPage: React.FC = () => {
   if (loading || !product) {
     return (
       <div className="max-w-7xl mx-auto px-4 py-20 text-center text-slate-500">
-        <div className="w-8 h-8 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
+        <div className="w-8 h-8 border-4 border-brand-600 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
         <p className="text-xs">Loading product details and real-time inventory...</p>
       </div>
     );
@@ -129,7 +129,7 @@ export const ProductDetailPage: React.FC = () => {
         <div className="flex flex-col justify-between space-y-6">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-md">
+              <span className="text-xs font-bold uppercase tracking-wider text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md">
                 {product.brand || 'CommercePilot'}
               </span>
               <span className="text-xs text-slate-400">SKU: {selectedVariant?.sku || product.sku}</span>
@@ -157,7 +157,7 @@ export const ProductDetailPage: React.FC = () => {
             <div className="mt-5 flex items-baseline gap-3">
               <span className="text-3xl font-extrabold text-slate-900">${currentPrice.toFixed(2)}</span>
               {selectedVariant && Number(selectedVariant.additional_price) > 0 && (
-                <span className="text-xs text-indigo-600 font-semibold bg-indigo-50 px-2 py-0.5 rounded">
+                <span className="text-xs text-brand-600 font-semibold bg-brand-50 px-2 py-0.5 rounded">
                   +${Number(selectedVariant.additional_price).toFixed(2)} tier
                 </span>
               )}
@@ -196,13 +196,13 @@ export const ProductDetailPage: React.FC = () => {
                       onClick={() => setSelectedVariant(v)}
                       className={`px-3.5 py-2 rounded-xl text-xs font-medium border transition cursor-pointer ${
                         selectedVariant?.id === v.id
-                          ? 'border-indigo-600 bg-indigo-50 text-indigo-700 font-bold shadow-2xs'
+                          ? 'border-brand-600 bg-brand-50 text-brand-700 font-bold shadow-2xs'
                           : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300'
                       }`}
                     >
                       <span>{v.name}</span>
                       {Number(v.additional_price) > 0 && (
-                        <span className="ml-1 text-[10px] text-slate-500">(+${Number(v.additional_price)})</span>
+                        <span className="ml-1 text-xs text-slate-500">(+${Number(v.additional_price)})</span>
                       )}
                     </button>
                   ))}
@@ -231,7 +231,7 @@ export const ProductDetailPage: React.FC = () => {
               <button
                 onClick={handleAddToCart}
                 disabled={currentStock === 0}
-                className="flex-1 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-40 text-white font-semibold py-3 px-6 rounded-xl shadow-md shadow-indigo-200 flex items-center justify-center gap-2 transition cursor-pointer"
+                className="flex-1 bg-brand-600 hover:bg-brand-700 disabled:opacity-40 text-white font-semibold py-3 px-6 rounded-xl shadow-md shadow-brand-200 flex items-center justify-center gap-2 transition cursor-pointer"
               >
                 <ShoppingBag className="w-4 h-4" />
                 <span>{currentStock === 0 ? 'Out of Stock' : 'Add to Bag'}</span>
@@ -242,7 +242,7 @@ export const ProductDetailPage: React.FC = () => {
           {/* Value Props */}
           <div className="grid grid-cols-3 gap-3 pt-6 border-t border-slate-200 text-slate-600 text-xs">
             <div className="flex items-center gap-2">
-              <Truck className="w-4 h-4 text-indigo-600 shrink-0" />
+              <Truck className="w-4 h-4 text-brand-600 shrink-0" />
               <span>Free Shipping over $50</span>
             </div>
             <div className="flex items-center gap-2">
@@ -250,7 +250,7 @@ export const ProductDetailPage: React.FC = () => {
               <span>30-Day Hassle-Free Returns</span>
             </div>
             <div className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-purple-600 shrink-0" />
+              <ShieldCheck className="w-4 h-4 text-brand-600 shrink-0" />
               <span>1-Yr Warranty</span>
             </div>
           </div>
@@ -265,7 +265,7 @@ export const ProductDetailPage: React.FC = () => {
             onClick={() => setActiveTab('details')}
             className={`pb-3 text-xs sm:text-sm font-semibold border-b-2 transition cursor-pointer ${
               activeTab === 'details'
-                ? 'border-indigo-600 text-indigo-600'
+                ? 'border-brand-600 text-brand-600'
                 : 'border-transparent text-slate-500 hover:text-slate-800'
             }`}
           >
@@ -275,7 +275,7 @@ export const ProductDetailPage: React.FC = () => {
             onClick={() => setActiveTab('ai_copy')}
             className={`pb-3 text-xs sm:text-sm font-semibold border-b-2 transition flex items-center gap-1.5 cursor-pointer ${
               activeTab === 'ai_copy'
-                ? 'border-indigo-600 text-indigo-600'
+                ? 'border-brand-600 text-brand-600'
                 : 'border-transparent text-slate-500 hover:text-slate-800'
             }`}
           >
@@ -286,7 +286,7 @@ export const ProductDetailPage: React.FC = () => {
             onClick={() => setActiveTab('reviews')}
             className={`pb-3 text-xs sm:text-sm font-semibold border-b-2 transition cursor-pointer ${
               activeTab === 'reviews'
-                ? 'border-indigo-600 text-indigo-600'
+                ? 'border-brand-600 text-brand-600'
                 : 'border-transparent text-slate-500 hover:text-slate-800'
             }`}
           >
@@ -303,7 +303,7 @@ export const ProductDetailPage: React.FC = () => {
             {product.tags && product.tags.length > 0 && (
               <div className="flex flex-wrap gap-1.5 pt-4">
                 {product.tags.map((tag, idx) => (
-                  <span key={idx} className="text-[11px] bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">
+                  <span key={idx} className="text-xs bg-slate-100 text-slate-600 px-2.5 py-1 rounded-md">
                     #{tag}
                   </span>
                 ))}
@@ -315,8 +315,8 @@ export const ProductDetailPage: React.FC = () => {
         {/* Tab 2: AI Copy */}
         {activeTab === 'ai_copy' && (
           <div className="py-6 max-w-3xl space-y-4">
-            <div className="bg-indigo-50/60 border border-indigo-100 rounded-2xl p-5">
-              <div className="flex items-center gap-2 mb-2 text-indigo-900 font-bold text-xs">
+            <div className="bg-brand-50/60 border border-brand-100 rounded-2xl p-5">
+              <div className="flex items-center gap-2 mb-2 text-brand-900 font-bold text-xs">
                 <Sparkles className="w-4 h-4 text-amber-500" />
                 <span>AI-Engineered Product Synthesis</span>
               </div>
@@ -344,7 +344,7 @@ export const ProductDetailPage: React.FC = () => {
                           ))}
                         </div>
                       </div>
-                      <span className="text-[11px] text-slate-400">{new Date(rev.created_at).toLocaleDateString()}</span>
+                      <span className="text-xs text-slate-400">{new Date(rev.created_at).toLocaleDateString()}</span>
                     </div>
                     {rev.title && <h4 className="text-xs font-bold text-slate-800 mb-1">{rev.title}</h4>}
                     <p className="text-xs text-slate-600 leading-relaxed">{rev.comment}</p>
@@ -391,7 +391,7 @@ export const ProductDetailPage: React.FC = () => {
                 <button
                   type="submit"
                   disabled={submittingReview}
-                  className="bg-slate-900 hover:bg-indigo-600 text-white font-semibold text-xs px-4 py-2 rounded-xl transition cursor-pointer"
+                  className="bg-slate-900 hover:bg-brand-600 text-white font-semibold text-xs px-4 py-2 rounded-xl transition cursor-pointer"
                 >
                   {submittingReview ? 'Posting...' : 'Post Review'}
                 </button>
@@ -399,7 +399,7 @@ export const ProductDetailPage: React.FC = () => {
             ) : (
               <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 flex items-center justify-between">
                 <span>Please sign in to write a product review.</span>
-                <Link to="/login" className="font-bold text-indigo-600 hover:underline">Sign In &rarr;</Link>
+                <Link to="/login" className="font-bold text-brand-600 hover:underline">Sign In &rarr;</Link>
               </div>
             )}
           </div>
@@ -424,11 +424,11 @@ export const ProductDetailPage: React.FC = () => {
                     className="w-full aspect-4/3 object-cover rounded-xl bg-slate-100 group-hover:scale-103 transition"
                   />
                   <h4 className="text-xs font-semibold text-slate-900 mt-2 truncate">{p.name}</h4>
-                  <p className="text-[11px] text-slate-500">{p.brand}</p>
+                  <p className="text-xs text-slate-500">{p.brand}</p>
                 </div>
                 <div className="mt-3 pt-2 border-t border-slate-100 flex justify-between items-center">
                   <span className="text-xs font-bold text-slate-900">${Number(p.base_price).toFixed(2)}</span>
-                  <span className="text-[11px] text-indigo-600 font-semibold group-hover:underline">View &rarr;</span>
+                  <span className="text-xs text-brand-600 font-semibold group-hover:underline">View &rarr;</span>
                 </div>
               </Link>
             ))}

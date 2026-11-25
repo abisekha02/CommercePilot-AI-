@@ -119,7 +119,7 @@ export const ERPPurchaseOrdersPage: React.FC = () => {
               handleAddItemToPO();
               setCreateModalOpen(true);
             }}
-            className="flex items-center gap-1.5 bg-indigo-600 hover:bg-indigo-700 text-white px-3.5 py-2 rounded-xl text-xs font-semibold shadow-xs transition cursor-pointer"
+            className="flex items-center gap-1.5 bg-brand-600 hover:bg-brand-700 text-white px-3.5 py-2 rounded-xl text-xs font-semibold shadow-xs transition cursor-pointer"
           >
             <Plus className="w-4 h-4" />
             <span>Create Purchase Order</span>
@@ -138,7 +138,7 @@ export const ERPPurchaseOrdersPage: React.FC = () => {
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse text-xs">
             <thead>
-              <tr className="bg-slate-50 border-b border-slate-200 text-slate-500 font-semibold uppercase tracking-wider text-[10px]">
+              <tr className="bg-slate-50 border-b border-slate-200 text-slate-500 font-semibold uppercase tracking-wider text-xs">
                 <th className="py-3.5 px-4">PO Number</th>
                 <th className="py-3.5 px-4">Vendor / Supplier</th>
                 <th className="py-3.5 px-4">Destination Hub</th>
@@ -153,7 +153,7 @@ export const ERPPurchaseOrdersPage: React.FC = () => {
               {loading ? (
                 <tr>
                   <td colSpan={8} className="py-12 text-center text-slate-400">
-                    <RefreshCw className="w-6 h-6 animate-spin mx-auto text-indigo-600 mb-2" />
+                    <RefreshCw className="w-6 h-6 animate-spin mx-auto text-brand-600 mb-2" />
                     <span>Loading procurement orders...</span>
                   </td>
                 </tr>
@@ -170,36 +170,36 @@ export const ERPPurchaseOrdersPage: React.FC = () => {
                     <td className="py-3 px-4">
                       <div className="font-semibold text-slate-900">{po.supplier_name}</div>
                     </td>
-                    <td className="py-3 px-4 font-mono text-[11px] text-slate-600">
+                    <td className="py-3 px-4 font-mono text-xs text-slate-600">
                       {po.warehouse_name || 'Central Distribution'}
                     </td>
                     <td className="py-3 px-4">
                       {po.items && po.items.length > 0 ? (
-                        <span className="text-[11px] text-slate-600">
+                        <span className="text-xs text-slate-600">
                           {po.items.map(it => `${it.quantity_ordered}x ${it.product_name}`).join(', ')}
                         </span>
                       ) : (
-                        <span className="text-[11px] text-slate-400">General restock</span>
+                        <span className="text-xs text-slate-400">General restock</span>
                       )}
                     </td>
                     <td className="py-3 px-4 text-right font-bold text-slate-900">
                       ${Number(po.total_cost).toLocaleString(undefined, { minimumFractionDigits: 2 })}
                     </td>
                     <td className="py-3 px-4 text-center">
-                      <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full inline-flex items-center gap-1 ${
+                      <span className={`text-xs font-bold px-2.5 py-0.5 rounded-full inline-flex items-center gap-1 ${
                         po.status === 'COMPLETED'
                           ? 'bg-emerald-100 text-emerald-800'
                           : po.status === 'SUBMITTED'
                           ? 'bg-blue-100 text-blue-800'
                           : po.status === 'PARTIALLY_RECEIVED'
-                          ? 'bg-purple-100 text-purple-800'
+                          ? 'bg-brand-100 text-brand-800'
                           : 'bg-slate-100 text-slate-700'
                       }`}>
                         {po.status === 'COMPLETED' ? <CheckCircle2 className="w-3 h-3 text-emerald-600" /> : <Clock className="w-3 h-3" />}
                         <span>{po.status_display || po.status}</span>
                       </span>
                     </td>
-                    <td className="py-3 px-4 text-slate-500 font-mono text-[11px]">
+                    <td className="py-3 px-4 text-slate-500 font-mono text-xs">
                       {po.expected_delivery_date || 'Standard Lead'}
                     </td>
                     <td className="py-3 px-4 text-right">
@@ -213,7 +213,7 @@ export const ERPPurchaseOrdersPage: React.FC = () => {
                           <span>{receivingId === po.id ? 'Receiving...' : 'Receive Goods'}</span>
                         </button>
                       ) : (
-                        <span className="text-[11px] text-slate-400 italic">Fulfilled & Credited</span>
+                        <span className="text-xs text-slate-400 italic">Fulfilled & Credited</span>
                       )}
                     </td>
                   </tr>
@@ -231,7 +231,7 @@ export const ERPPurchaseOrdersPage: React.FC = () => {
             <div className="flex justify-between items-center pb-3 border-b border-slate-100">
               <div>
                 <h3 className="font-bold text-sm text-slate-900">Create Replenishment Purchase Order</h3>
-                <p className="text-[11px] text-slate-500">Initiate inventory restock with certified supplier</p>
+                <p className="text-xs text-slate-500">Initiate inventory restock with certified supplier</p>
               </div>
               <button
                 onClick={() => setCreateModalOpen(false)}
@@ -279,7 +279,7 @@ export const ERPPurchaseOrdersPage: React.FC = () => {
                   <button
                     type="button"
                     onClick={handleAddItemToPO}
-                    className="text-indigo-600 hover:text-indigo-800 text-[11px] font-bold cursor-pointer"
+                    className="text-brand-600 hover:text-brand-800 text-xs font-bold cursor-pointer"
                   >
                     + Add Product Line
                   </button>
@@ -364,7 +364,7 @@ export const ERPPurchaseOrdersPage: React.FC = () => {
                 <button
                   type="submit"
                   disabled={creating}
-                  className="bg-indigo-600 hover:bg-indigo-700 disabled:opacity-40 text-white font-semibold px-5 py-2 rounded-xl text-xs shadow-xs cursor-pointer"
+                  className="bg-brand-600 hover:bg-brand-700 disabled:opacity-40 text-white font-semibold px-5 py-2 rounded-xl text-xs shadow-xs cursor-pointer"
                 >
                   {creating ? 'Submitting PO...' : 'Issue Purchase Order'}
                 </button>

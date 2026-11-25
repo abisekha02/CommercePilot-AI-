@@ -9,7 +9,7 @@ export const CustomerFooter: React.FC = () => {
       <div className="border-b border-slate-800 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-slate-800 text-indigo-400 flex items-center justify-center shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-slate-800 text-brand-400 flex items-center justify-center shrink-0">
               <Truck className="w-5 h-5" />
             </div>
             <div>
@@ -39,7 +39,7 @@ export const CustomerFooter: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-slate-800 text-purple-400 flex items-center justify-center shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-slate-800 text-brand-400 flex items-center justify-center shrink-0">
               <Headphones className="w-5 h-5" />
             </div>
             <div>
@@ -54,7 +54,7 @@ export const CustomerFooter: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
           <div className="flex items-center gap-2 text-white font-bold text-lg mb-3">
-            <div className="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center text-white">
+            <div className="w-7 h-7 rounded-lg bg-brand-600 flex items-center justify-center text-white">
               <Sparkles className="w-4 h-4" />
             </div>
             <span>CommercePilot AI</span>
@@ -91,7 +91,7 @@ export const CustomerFooter: React.FC = () => {
         <div>
           <h4 className="text-white font-semibold mb-3 text-sm">ERP & Architecture</h4>
           <ul className="space-y-2 text-xs">
-            <li><Link to="/erp" className="text-indigo-400 hover:text-indigo-300 font-medium transition">Staff ERP Dashboard &rarr;</Link></li>
+            <li><Link to="/erp" className="text-brand-400 hover:text-brand-300 font-medium transition">Staff ERP Dashboard &rarr;</Link></li>
             <li><a href="/api/docs/" target="_blank" rel="noreferrer" className="hover:text-white transition">OpenAPI Swagger UI</a></li>
             <li><a href="/api/schema/" target="_blank" rel="noreferrer" className="hover:text-white transition">Raw OpenAPI Schema</a></li>
             <li><span className="text-slate-500">PostgreSQL + Django 5 + React 19</span></li>

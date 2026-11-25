@@ -52,7 +52,7 @@ export const ERPSalesAnalyticsPage: React.FC = () => {
   if (loading) {
     return (
       <div className="h-64 flex flex-col items-center justify-center text-slate-400 gap-2">
-        <RefreshCw className="w-6 h-6 animate-spin text-indigo-600" />
+        <RefreshCw className="w-6 h-6 animate-spin text-brand-600" />
         <span className="text-xs">Computing revenue metrics and order turnover...</span>
       </div>
     );
@@ -94,7 +94,7 @@ export const ERPSalesAnalyticsPage: React.FC = () => {
           <div className="text-2xl font-extrabold text-slate-900">
             ${(analytics?.total_revenue || 0).toLocaleString(undefined, { minimumFractionDigits: 2 })}
           </div>
-          <span className="text-[11px] text-emerald-600 font-semibold mt-1 block">
+          <span className="text-xs text-emerald-600 font-semibold mt-1 block">
             Net delivered & confirmed orders
           </span>
         </div>
@@ -106,7 +106,7 @@ export const ERPSalesAnalyticsPage: React.FC = () => {
           <div className="text-2xl font-extrabold text-slate-900">
             ${(analytics?.recent_30d_revenue || 0).toLocaleString(undefined, { minimumFractionDigits: 2 })}
           </div>
-          <span className="text-[11px] text-slate-500 mt-1 block">
+          <span className="text-xs text-slate-500 mt-1 block">
             Across {analytics?.recent_30d_orders_count || 0} recent shipments
           </span>
         </div>
@@ -118,7 +118,7 @@ export const ERPSalesAnalyticsPage: React.FC = () => {
           <div className="text-2xl font-extrabold text-slate-900">
             {analytics?.total_orders_count || 0}
           </div>
-          <span className="text-[11px] text-indigo-600 font-semibold mt-1 block">
+          <span className="text-xs text-brand-600 font-semibold mt-1 block">
             Total transactions processed
           </span>
         </div>
@@ -130,7 +130,7 @@ export const ERPSalesAnalyticsPage: React.FC = () => {
           <div className="text-2xl font-extrabold text-slate-900">
             ${analytics?.average_order_value || 0}
           </div>
-          <span className="text-[11px] text-slate-500 mt-1 block">
+          <span className="text-xs text-slate-500 mt-1 block">
             Basket size per customer checkout
           </span>
         </div>
@@ -149,7 +149,7 @@ export const ERPSalesAnalyticsPage: React.FC = () => {
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
               <thead>
-                <tr className="border-b border-slate-100 text-[10px] text-slate-400 uppercase font-semibold">
+                <tr className="border-b border-slate-100 text-xs text-slate-400 uppercase font-semibold">
                   <th className="py-2.5">Product Title</th>
                   <th className="py-2.5 text-center">Units Sold</th>
                   <th className="py-2.5 text-right">Gross Total</th>
@@ -159,7 +159,7 @@ export const ERPSalesAnalyticsPage: React.FC = () => {
                 {analytics?.top_products?.map((prod, idx) => (
                   <tr key={idx} className="hover:bg-slate-50/50">
                     <td className="py-3 font-semibold text-slate-900">{prod.product_name}</td>
-                    <td className="py-3 text-center font-bold text-indigo-600">{prod.total_sold} units</td>
+                    <td className="py-3 text-center font-bold text-brand-600">{prod.total_sold} units</td>
                     <td className="py-3 text-right font-extrabold text-slate-900">
                       ${Number(prod.total_sales).toFixed(2)}
                     </td>
@@ -187,7 +187,7 @@ export const ERPSalesAnalyticsPage: React.FC = () => {
                     <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
                       <div
                         className={`h-full rounded-full ${
-                          st.status === 'DELIVERED' ? 'bg-emerald-500' : st.status === 'SHIPPED' ? 'bg-blue-500' : 'bg-indigo-500'
+                          st.status === 'DELIVERED' ? 'bg-emerald-500' : st.status === 'SHIPPED' ? 'bg-blue-500' : 'bg-brand-500'
                         }`}
                         style={{ width: `${pct}%` }}
                       />

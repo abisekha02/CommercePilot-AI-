@@ -46,43 +46,43 @@ export const CustomerNavbar: React.FC = () => {
               onClick={() => setDemoMenuOpen(!demoMenuOpen)}
               className="flex items-center gap-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 px-2.5 py-1 rounded-md text-xs font-medium transition cursor-pointer"
             >
-              <ShieldCheck className="w-3.5 h-3.5 text-indigo-400" />
+              <ShieldCheck className="w-3.5 h-3.5 text-brand-400" />
               <span>Demo Role: <strong className="text-white capitalize">{user?.role ? user.role.toLowerCase().replace('_', ' ') : 'Customer'}</strong></span>
               <ChevronDown className="w-3 h-3" />
             </button>
 
             {demoMenuOpen && (
               <div className="absolute right-0 mt-1 w-56 bg-white rounded-lg shadow-xl border border-slate-200 py-1.5 z-50 text-slate-800">
-                <div className="px-3 py-1 text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
+                <div className="px-3 py-1 text-xs font-semibold text-slate-400 uppercase tracking-wider">
                   Switch Demo Account
                 </div>
                 <button
                   onClick={() => handleQuickRole('admin')}
-                  className="w-full text-left px-3 py-1.5 text-xs hover:bg-indigo-50 flex items-center justify-between"
+                  className="w-full text-left px-3 py-1.5 text-xs hover:bg-brand-50 flex items-center justify-between"
                 >
                   <span className="font-medium text-slate-800">Administrator</span>
-                  <span className="text-[10px] bg-purple-100 text-purple-700 font-bold px-1.5 py-0.5 rounded">Full ERP</span>
+                  <span className="text-xs bg-brand-100 text-brand-700 font-bold px-1.5 py-0.5 rounded">Full ERP</span>
                 </button>
                 <button
                   onClick={() => handleQuickRole('manager')}
-                  className="w-full text-left px-3 py-1.5 text-xs hover:bg-indigo-50 flex items-center justify-between"
+                  className="w-full text-left px-3 py-1.5 text-xs hover:bg-brand-50 flex items-center justify-between"
                 >
                   <span className="font-medium text-slate-800">Store Manager</span>
-                  <span className="text-[10px] bg-blue-100 text-blue-700 font-bold px-1.5 py-0.5 rounded">Catalog/Orders</span>
+                  <span className="text-xs bg-blue-100 text-blue-700 font-bold px-1.5 py-0.5 rounded">Catalog/Orders</span>
                 </button>
                 <button
                   onClick={() => handleQuickRole('warehouse')}
-                  className="w-full text-left px-3 py-1.5 text-xs hover:bg-indigo-50 flex items-center justify-between"
+                  className="w-full text-left px-3 py-1.5 text-xs hover:bg-brand-50 flex items-center justify-between"
                 >
                   <span className="font-medium text-slate-800">Warehouse Staff</span>
-                  <span className="text-[10px] bg-amber-100 text-amber-700 font-bold px-1.5 py-0.5 rounded">Stock/PO</span>
+                  <span className="text-xs bg-amber-100 text-amber-700 font-bold px-1.5 py-0.5 rounded">Stock/PO</span>
                 </button>
                 <button
                   onClick={() => handleQuickRole('customer')}
-                  className="w-full text-left px-3 py-1.5 text-xs hover:bg-indigo-50 flex items-center justify-between"
+                  className="w-full text-left px-3 py-1.5 text-xs hover:bg-brand-50 flex items-center justify-between"
                 >
                   <span className="font-medium text-slate-800">Customer</span>
-                  <span className="text-[10px] bg-emerald-100 text-emerald-700 font-bold px-1.5 py-0.5 rounded">Shopper</span>
+                  <span className="text-xs bg-emerald-100 text-emerald-700 font-bold px-1.5 py-0.5 rounded">Shopper</span>
                 </button>
               </div>
             )}
@@ -96,12 +96,12 @@ export const CustomerNavbar: React.FC = () => {
           
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 shrink-0">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center text-white shadow-md shadow-indigo-200">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-brand-500 flex items-center justify-center text-white shadow-md shadow-brand-200">
               <Sparkles className="w-5 h-5" />
             </div>
             <div>
               <span className="text-xl font-bold tracking-tight text-slate-900">CommercePilot</span>
-              <span className="ml-1 text-xs font-semibold px-1.5 py-0.5 rounded bg-indigo-50 text-indigo-600 border border-indigo-200">AI</span>
+              <span className="ml-1 text-xs font-semibold px-1.5 py-0.5 rounded bg-brand-50 text-brand-600 border border-brand-200">AI</span>
             </div>
           </Link>
 
@@ -113,7 +113,7 @@ export const CustomerNavbar: React.FC = () => {
                 placeholder="Search products, brands, tech gear..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-slate-100 border border-slate-200 rounded-full pl-10 pr-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white transition"
+                className="w-full bg-slate-100 border border-slate-200 rounded-full pl-10 pr-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition"
               />
               <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
             </div>
@@ -121,8 +121,8 @@ export const CustomerNavbar: React.FC = () => {
 
           {/* Navigation Links & Actions */}
           <div className="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-600">
-            <Link to="/catalog" className="hover:text-indigo-600 transition">Catalog</Link>
-            <Link to="/track" className="hover:text-indigo-600 transition flex items-center gap-1.5">
+            <Link to="/catalog" className="hover:text-brand-600 transition">Catalog</Link>
+            <Link to="/track" className="hover:text-brand-600 transition flex items-center gap-1.5">
               <Truck className="w-4 h-4 text-slate-400" />
               <span>Track Order</span>
             </Link>
@@ -131,7 +131,7 @@ export const CustomerNavbar: React.FC = () => {
             {isStaff && (
               <Link
                 to="/erp"
-                className="flex items-center gap-1.5 bg-indigo-50 text-indigo-700 hover:bg-indigo-100 px-3 py-1.5 rounded-lg border border-indigo-200 font-semibold transition"
+                className="flex items-center gap-1.5 bg-brand-50 text-brand-700 hover:bg-brand-100 px-3 py-1.5 rounded-lg border border-brand-200 font-semibold transition"
               >
                 <LayoutDashboard className="w-4 h-4" />
                 <span>ERP Dashboard</span>
@@ -149,7 +149,7 @@ export const CustomerNavbar: React.FC = () => {
             >
               <ShoppingBag className="w-6 h-6" />
               {itemCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-indigo-600 text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center shadow">
+                <span className="absolute -top-1 -right-1 bg-brand-600 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center shadow">
                   {itemCount}
                 </span>
               )}
@@ -160,7 +160,7 @@ export const CustomerNavbar: React.FC = () => {
               <div className="flex items-center gap-3">
                 <div className="hidden sm:flex flex-col text-right">
                   <span className="text-xs font-semibold text-slate-800">{user?.first_name || user?.username}</span>
-                  <span className="text-[10px] text-slate-400 capitalize">{user?.role?.toLowerCase().replace('_', ' ')}</span>
+                  <span className="text-xs text-slate-400 capitalize">{user?.role?.toLowerCase().replace('_', ' ')}</span>
                 </div>
                 <button
                   onClick={logout}
@@ -210,7 +210,7 @@ export const CustomerNavbar: React.FC = () => {
             <Link to="/catalog" onClick={() => setMobileMenuOpen(false)} className="text-slate-700 py-1.5 font-medium">Product Catalog</Link>
             <Link to="/track" onClick={() => setMobileMenuOpen(false)} className="text-slate-700 py-1.5 font-medium">Track Order</Link>
             {isStaff && (
-              <Link to="/erp" onClick={() => setMobileMenuOpen(false)} className="text-indigo-600 font-semibold py-1.5">
+              <Link to="/erp" onClick={() => setMobileMenuOpen(false)} className="text-brand-600 font-semibold py-1.5">
                 ERP Dashboard
               </Link>
             )}

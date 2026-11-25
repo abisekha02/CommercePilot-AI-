@@ -42,7 +42,7 @@ export const RegisterPage: React.FC = () => {
       <div className="max-w-md w-full space-y-6 bg-white border border-slate-200 p-8 rounded-3xl shadow-xl">
         
         <div className="text-center">
-          <div className="w-12 h-12 rounded-2xl bg-indigo-600 flex items-center justify-center text-white mx-auto shadow-md shadow-indigo-200 mb-3">
+          <div className="w-12 h-12 rounded-2xl bg-brand-600 flex items-center justify-center text-white mx-auto shadow-md shadow-brand-200 mb-3">
             <Sparkles className="w-6 h-6" />
           </div>
           <h2 className="text-2xl font-bold text-slate-900 tracking-tight">Create Customer Account</h2>
@@ -65,7 +65,7 @@ export const RegisterPage: React.FC = () => {
                 required
                 value={formData.first_name}
                 onChange={(e) => setFormData({ ...formData, first_name: e.target.value })}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-indigo-500"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-brand-500"
               />
             </div>
             <div>
@@ -75,7 +75,7 @@ export const RegisterPage: React.FC = () => {
                 required
                 value={formData.last_name}
                 onChange={(e) => setFormData({ ...formData, last_name: e.target.value })}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-indigo-500"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-brand-500"
               />
             </div>
           </div>
@@ -87,7 +87,7 @@ export const RegisterPage: React.FC = () => {
               required
               value={formData.username}
               onChange={(e) => setFormData({ ...formData, username: e.target.value })}
-              className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-indigo-500"
+              className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-brand-500"
             />
           </div>
 
@@ -98,7 +98,7 @@ export const RegisterPage: React.FC = () => {
               required
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-indigo-500"
+              className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-brand-500"
             />
           </div>
 
@@ -108,7 +108,7 @@ export const RegisterPage: React.FC = () => {
               type="tel"
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-indigo-500"
+              className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-brand-500"
             />
           </div>
 
@@ -120,7 +120,7 @@ export const RegisterPage: React.FC = () => {
                 required
                 value={formData.password}
                 onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-indigo-500"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-brand-500"
               />
             </div>
             <div>
@@ -130,7 +130,7 @@ export const RegisterPage: React.FC = () => {
                 required
                 value={formData.password_confirm}
                 onChange={(e) => setFormData({ ...formData, password_confirm: e.target.value })}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-indigo-500"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:ring-2 focus:ring-brand-500"
               />
             </div>
           </div>
@@ -138,7 +138,7 @@ export const RegisterPage: React.FC = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white font-bold py-3 rounded-xl transition cursor-pointer shadow-md text-xs mt-2"
+            className="w-full bg-brand-600 hover:bg-brand-700 disabled:opacity-50 text-white font-bold py-3 rounded-xl transition cursor-pointer shadow-md text-xs mt-2"
           >
             {loading ? 'Creating Account...' : 'Complete Registration'}
           </button>
@@ -146,7 +146,7 @@ export const RegisterPage: React.FC = () => {
 
         <div className="text-center text-xs text-slate-500">
           Already registered?{' '}
-          <Link to="/login" className="font-bold text-indigo-600 hover:underline">
+          <Link to="/login" className="font-bold text-brand-600 hover:underline">
             Sign In here
           </Link>
         </div>

@@ -44,7 +44,7 @@ export const LoginPage: React.FC = () => {
         
         {/* Header */}
         <div className="text-center">
-          <div className="w-12 h-12 rounded-2xl bg-indigo-600 flex items-center justify-center text-white mx-auto shadow-md shadow-indigo-200 mb-3">
+          <div className="w-12 h-12 rounded-2xl bg-brand-600 flex items-center justify-center text-white mx-auto shadow-md shadow-brand-200 mb-3">
             <Sparkles className="w-6 h-6" />
           </div>
           <h2 className="text-2xl font-bold text-slate-900 tracking-tight">Sign in to CommercePilot</h2>
@@ -53,37 +53,37 @@ export const LoginPage: React.FC = () => {
 
         {/* Demo Fast Login Pills */}
         <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 space-y-2">
-          <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block">
+          <span className="text-xs uppercase font-bold text-slate-400 tracking-wider block">
             Instant Demo Evaluator Access:
           </span>
           <div className="grid grid-cols-2 gap-2 text-xs">
             <button
               onClick={() => handleQuickDemo('admin')}
-              className="bg-purple-50 hover:bg-purple-100 text-purple-700 font-semibold p-2 rounded-xl border border-purple-200 text-left transition cursor-pointer"
+              className="bg-brand-50 hover:bg-brand-100 text-brand-700 font-semibold p-2 rounded-xl border border-brand-200 text-left transition cursor-pointer"
             >
               👑 Administrator
-              <span className="block text-[10px] text-purple-500 font-normal">Full ERP Access</span>
+              <span className="block text-xs text-brand-500 font-normal">Full ERP Access</span>
             </button>
             <button
               onClick={() => handleQuickDemo('manager')}
               className="bg-blue-50 hover:bg-blue-100 text-blue-700 font-semibold p-2 rounded-xl border border-blue-200 text-left transition cursor-pointer"
             >
               🏬 Store Manager
-              <span className="block text-[10px] text-blue-500 font-normal">Catalog & Orders</span>
+              <span className="block text-xs text-blue-500 font-normal">Catalog & Orders</span>
             </button>
             <button
               onClick={() => handleQuickDemo('warehouse')}
               className="bg-amber-50 hover:bg-amber-100 text-amber-700 font-semibold p-2 rounded-xl border border-amber-200 text-left transition cursor-pointer"
             >
               📦 Warehouse Staff
-              <span className="block text-[10px] text-amber-500 font-normal">Stock & POs</span>
+              <span className="block text-xs text-amber-500 font-normal">Stock & POs</span>
             </button>
             <button
               onClick={() => handleQuickDemo('customer')}
               className="bg-emerald-50 hover:bg-emerald-100 text-emerald-700 font-semibold p-2 rounded-xl border border-emerald-200 text-left transition cursor-pointer"
             >
               🛍️ Customer
-              <span className="block text-[10px] text-emerald-500 font-normal">Shopper Profile</span>
+              <span className="block text-xs text-emerald-500 font-normal">Shopper Profile</span>
             </button>
           </div>
         </div>
@@ -106,7 +106,7 @@ export const LoginPage: React.FC = () => {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder="admin, manager, or customer"
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-3 py-2.5 text-xs focus:ring-2 focus:ring-indigo-500"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-3 py-2.5 text-xs focus:ring-2 focus:ring-brand-500"
               />
               <User className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
             </div>
@@ -121,7 +121,7 @@ export const LoginPage: React.FC = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-3 py-2.5 text-xs focus:ring-2 focus:ring-indigo-500"
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-3 py-2.5 text-xs focus:ring-2 focus:ring-brand-500"
               />
               <Lock className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
             </div>
@@ -138,7 +138,7 @@ export const LoginPage: React.FC = () => {
 
         <div className="text-center text-xs text-slate-500">
           Don't have an account?{' '}
-          <Link to="/register" className="font-bold text-indigo-600 hover:underline">
+          <Link to="/register" className="font-bold text-brand-600 hover:underline">
             Register as Customer
           </Link>
         </div>

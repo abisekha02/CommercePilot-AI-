@@ -49,7 +49,7 @@ export const ERPDashboardOverview: React.FC = () => {
   if (loading) {
     return (
       <div className="h-64 flex flex-col items-center justify-center text-slate-400 gap-2">
-        <RefreshCw className="w-7 h-7 animate-spin text-indigo-600" />
+        <RefreshCw className="w-7 h-7 animate-spin text-brand-600" />
         <span className="text-xs font-medium">Aggregating enterprise telemetry & AI insights...</span>
       </div>
     );
@@ -90,7 +90,7 @@ export const ERPDashboardOverview: React.FC = () => {
           <div className="text-2xl font-extrabold text-slate-900">
             ${(salesStats?.total_revenue || 0).toLocaleString(undefined, { minimumFractionDigits: 2 })}
           </div>
-          <div className="mt-2 flex items-center gap-1 text-[11px] text-emerald-600 font-semibold">
+          <div className="mt-2 flex items-center gap-1 text-xs text-emerald-600 font-semibold">
             <TrendingUp className="w-3.5 h-3.5" />
             <span>${(salesStats?.recent_30d_revenue || 0).toFixed(2)} in past 30 days</span>
           </div>
@@ -100,14 +100,14 @@ export const ERPDashboardOverview: React.FC = () => {
         <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-2xs">
           <div className="flex items-center justify-between text-slate-500 mb-2">
             <span className="text-xs font-semibold uppercase tracking-wider">Processed Orders</span>
-            <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center">
               <ShoppingCart className="w-4 h-4" />
             </div>
           </div>
           <div className="text-2xl font-extrabold text-slate-900">
             {salesStats?.total_orders_count || 0}
           </div>
-          <div className="mt-2 text-[11px] text-slate-400">
+          <div className="mt-2 text-xs text-slate-400">
             Avg Order: <strong>${salesStats?.average_order_value || 0}</strong>
           </div>
         </div>
@@ -123,7 +123,7 @@ export const ERPDashboardOverview: React.FC = () => {
           <div className="text-2xl font-extrabold text-slate-900">
             {inventoryStats?.total_units_on_hand || 0} units
           </div>
-          <div className="mt-2 text-[11px] text-slate-400">
+          <div className="mt-2 text-xs text-slate-400">
             Across {inventoryStats?.total_skus || 0} tracked warehouse SKUs
           </div>
         </div>
@@ -139,7 +139,7 @@ export const ERPDashboardOverview: React.FC = () => {
           <div className="text-2xl font-extrabold text-amber-600">
             {inventoryStats?.low_stock_count || 0} Critical SKUs
           </div>
-          <Link to="/erp/inventory?low_stock=true" className="mt-2 inline-flex items-center gap-1 text-[11px] text-indigo-600 hover:underline font-semibold">
+          <Link to="/erp/inventory?low_stock=true" className="mt-2 inline-flex items-center gap-1 text-xs text-brand-600 hover:underline font-semibold">
             <span>View Reorder Queue</span>
             <ArrowUpRight className="w-3 h-3" />
           </Link>
@@ -148,21 +148,21 @@ export const ERPDashboardOverview: React.FC = () => {
       </div>
 
       {/* AI Executive Inventory & Sales Assessment */}
-      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-3xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden">
+      <div className="bg-gradient-to-r from-slate-900 via-brand-950 to-slate-900 rounded-3xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-indigo-500/20 border border-indigo-400/30 flex items-center justify-center text-amber-300">
+            <div className="w-9 h-9 rounded-xl bg-brand-500/20 border border-brand-400/30 flex items-center justify-center text-amber-300">
               <Sparkles className="w-5 h-5 animate-pulse" />
             </div>
             <div>
               <h3 className="font-bold text-base sm:text-lg text-white">Autonomous AI Inventory Health & Velocity Diagnostic</h3>
-              <p className="text-xs text-indigo-200">Continuous machine learning evaluation of stockout risks and slow-moving capital</p>
+              <p className="text-xs text-brand-200">Continuous machine learning evaluation of stockout risks and slow-moving capital</p>
             </div>
           </div>
           <button
             onClick={handleRefreshAI}
             disabled={refreshingAI}
-            className="self-start sm:self-auto bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold px-3.5 py-2 rounded-xl transition flex items-center gap-1.5 cursor-pointer shadow-xs"
+            className="self-start sm:self-auto bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold px-3.5 py-2 rounded-xl transition flex items-center gap-1.5 cursor-pointer shadow-xs"
           >
             <RefreshCw className={`w-3.5 h-3.5 ${refreshingAI ? 'animate-spin' : ''}`} />
             <span>Re-Analyze Health</span>
@@ -178,7 +178,7 @@ export const ERPDashboardOverview: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Critical Low Stock */}
               <div className="bg-white/10 rounded-2xl p-4 border border-white/10">
-                <h4 className="font-bold text-white uppercase tracking-wider text-[11px] mb-3 flex items-center gap-1.5 text-amber-300">
+                <h4 className="font-bold text-white uppercase tracking-wider text-xs mb-3 flex items-center gap-1.5 text-amber-300">
                   <AlertTriangle className="w-3.5 h-3.5" />
                   <span>Critical Reorder Triggers ({aiSummary.critical_low_stock.length})</span>
                 </h4>
@@ -187,11 +187,11 @@ export const ERPDashboardOverview: React.FC = () => {
                     <div key={idx} className="flex justify-between items-center bg-black/20 p-2.5 rounded-lg">
                       <div>
                         <p className="font-bold text-white text-xs">{item.product}</p>
-                        <p className="text-[10px] text-slate-400">SKU: {item.sku} • {item.quantity} units remaining</p>
+                        <p className="text-xs text-slate-400">SKU: {item.sku} • {item.quantity} units remaining</p>
                       </div>
                       <Link
                         to="/erp/purchase-orders"
-                        className="bg-indigo-500 hover:bg-indigo-400 text-white text-[10px] font-bold px-2 py-1 rounded transition"
+                        className="bg-brand-500 hover:bg-brand-400 text-white text-xs font-bold px-2 py-1 rounded transition"
                       >
                         Draft PO
                       </Link>
@@ -202,7 +202,7 @@ export const ERPDashboardOverview: React.FC = () => {
 
               {/* Slow Moving Capital */}
               <div className="bg-white/10 rounded-2xl p-4 border border-white/10">
-                <h4 className="font-bold text-white uppercase tracking-wider text-[11px] mb-3 flex items-center gap-1.5 text-blue-300">
+                <h4 className="font-bold text-white uppercase tracking-wider text-xs mb-3 flex items-center gap-1.5 text-blue-300">
                   <Sparkles className="w-3.5 h-3.5" />
                   <span>Slow-Moving Inventory Recommendations</span>
                 </h4>
@@ -213,7 +213,7 @@ export const ERPDashboardOverview: React.FC = () => {
                         <span>{item.product}</span>
                         <span className="text-slate-400">{item.quantity} in stock</span>
                       </div>
-                      <p className="text-[10px] text-indigo-300 mt-1 italic">
+                      <p className="text-xs text-brand-300 mt-1 italic">
                         Action: {item.recommendation}
                       </p>
                     </div>
@@ -235,7 +235,7 @@ export const ERPDashboardOverview: React.FC = () => {
         <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-2xs">
           <div className="flex items-center justify-between mb-4">
             <h3 className="font-bold text-slate-900 text-sm">Recent Inventory Audit Ledger</h3>
-            <Link to="/erp/movements" className="text-xs text-indigo-600 hover:underline font-semibold">
+            <Link to="/erp/movements" className="text-xs text-brand-600 hover:underline font-semibold">
               Full Ledger &rarr;
             </Link>
           </div>
@@ -245,7 +245,7 @@ export const ERPDashboardOverview: React.FC = () => {
               <div key={mv.id} className="py-2.5 flex items-center justify-between">
                 <div>
                   <p className="font-semibold text-slate-800">{mv.product_name}</p>
-                  <p className="text-[10px] text-slate-400">
+                  <p className="text-xs text-slate-400">
                     {mv.movement_type_display} • {mv.warehouse_code} • by {mv.performed_by_name || 'System'}
                   </p>
                 </div>
@@ -263,7 +263,7 @@ export const ERPDashboardOverview: React.FC = () => {
         <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-2xs">
           <div className="flex items-center justify-between mb-4">
             <h3 className="font-bold text-slate-900 text-sm">Top Revenue Generators</h3>
-            <Link to="/erp/analytics" className="text-xs text-indigo-600 hover:underline font-semibold">
+            <Link to="/erp/analytics" className="text-xs text-brand-600 hover:underline font-semibold">
               Sales Reports &rarr;
             </Link>
           </div>
@@ -273,7 +273,7 @@ export const ERPDashboardOverview: React.FC = () => {
               <div key={idx} className="py-2.5 flex items-center justify-between">
                 <div>
                   <p className="font-semibold text-slate-800">{p.product_name}</p>
-                  <p className="text-[10px] text-slate-400">{p.total_sold} units fulfilled</p>
+                  <p className="text-xs text-slate-400">{p.total_sold} units fulfilled</p>
                 </div>
                 <span className="font-bold text-slate-900">
                   ${Number(p.total_sales).toFixed(2)}

@@ -73,7 +73,7 @@ export const ERPStockMovementsPage: React.FC = () => {
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse text-xs">
             <thead>
-              <tr className="bg-slate-50 border-b border-slate-200 text-slate-500 font-semibold uppercase tracking-wider text-[10px]">
+              <tr className="bg-slate-50 border-b border-slate-200 text-slate-500 font-semibold uppercase tracking-wider text-xs">
                 <th className="py-3.5 px-4">Timestamp</th>
                 <th className="py-3.5 px-4">Product Name</th>
                 <th className="py-3.5 px-4">Warehouse</th>
@@ -89,7 +89,7 @@ export const ERPStockMovementsPage: React.FC = () => {
               {loading ? (
                 <tr>
                   <td colSpan={9} className="py-12 text-center text-slate-400">
-                    <RefreshCw className="w-6 h-6 animate-spin mx-auto text-indigo-600 mb-2" />
+                    <RefreshCw className="w-6 h-6 animate-spin mx-auto text-brand-600 mb-2" />
                     <span>Loading movement transactions...</span>
                   </td>
                 </tr>
@@ -102,17 +102,17 @@ export const ERPStockMovementsPage: React.FC = () => {
               ) : (
                 movements.map((m) => (
                   <tr key={m.id} className="hover:bg-slate-50/80 transition">
-                    <td className="py-3 px-4 font-mono text-[11px] text-slate-500 whitespace-nowrap">
+                    <td className="py-3 px-4 font-mono text-xs text-slate-500 whitespace-nowrap">
                       {new Date(m.created_at).toLocaleString()}
                     </td>
                     <td className="py-3 px-4 font-bold text-slate-900">{m.product_name}</td>
                     <td className="py-3 px-4">
-                      <span className="bg-slate-100 font-mono text-[10px] text-slate-700 px-2 py-0.5 rounded">
+                      <span className="bg-slate-100 font-mono text-xs text-slate-700 px-2 py-0.5 rounded">
                         {m.warehouse_code}
                       </span>
                     </td>
                     <td className="py-3 px-4">
-                      <span className="text-[11px] font-semibold text-slate-700">
+                      <span className="text-xs font-semibold text-slate-700">
                         {m.movement_type_display}
                       </span>
                     </td>
@@ -125,14 +125,14 @@ export const ERPStockMovementsPage: React.FC = () => {
                         {m.quantity_change > 0 ? `+${m.quantity_change}` : m.quantity_change}
                       </span>
                     </td>
-                    <td className="py-3 px-4 text-center font-mono text-[11px] text-slate-600">
+                    <td className="py-3 px-4 text-center font-mono text-xs text-slate-600">
                       {m.previous_quantity} &rarr; <strong className="text-slate-900">{m.new_quantity}</strong>
                     </td>
-                    <td className="py-3 px-4 font-mono text-[11px] text-indigo-600 font-semibold">
+                    <td className="py-3 px-4 font-mono text-xs text-brand-600 font-semibold">
                       {m.reference_number || '—'}
                     </td>
                     <td className="py-3 px-4 text-slate-600">{m.performed_by_name || 'System / Batch'}</td>
-                    <td className="py-3 px-4 text-slate-500 text-[11px] max-w-xs truncate">{m.notes || '—'}</td>
+                    <td className="py-3 px-4 text-slate-500 text-xs max-w-xs truncate">{m.notes || '—'}</td>
                   </tr>
                 ))
               )}
