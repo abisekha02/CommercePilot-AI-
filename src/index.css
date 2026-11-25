@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+/* Design tokens: change the palette here and the whole app follows. */
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", "DM Sans", ui-sans-serif, sans-serif;
+
+  --color-canvas: #f2f5f5;
+  --color-ink: #0f1a1f;
+
+  --color-brand-50: #e8f4f6;
+  --color-brand-100: #cde6ea;
+  --color-brand-200: #9fcdd5;
+  --color-brand-300: #6fb1bd;
+  --color-brand-400: #3f8f9e;
+  --color-brand-500: #1f7283;
+  --color-brand-600: #0b5563;
+  --color-brand-700: #094651;
+  --color-brand-800: #08373f;
+  --color-brand-900: #072c33;
+  --color-brand-950: #041a1f;
+}
+
+@layer base {
+  body { @apply bg-canvas text-ink antialiased font-sans; margin: 0; min-height: 100vh; }
+  #root { min-height: 100vh; display: flex; flex-direction: column; }
+  h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.02em; }
+  :focus-visible { outline: 2px solid var(--color-brand-600); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  }
+}
