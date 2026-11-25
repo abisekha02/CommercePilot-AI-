@@ -1,0 +1,28 @@
+databases:
+  - name: commercepilot-db
+    databaseName: commercepilot
+    user: commercepilot
+    plan: free
+
+services:
+  # Backend API Service
+  - type: web
+    name: commercepilot-api
+    runtime: python
+    buildCommand: "pip install -r requirements.txt && python manage.py migrate && python manage.py seed_data"
+    startCommand: "gunicorn core.wsgi:application --bind 0.0.0.0:$PORT"
+    rootDir: backend
+    plan: free
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: ".onrender.com,localhost,127.0.0.1"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: commercepilot-db
+          property: connectionString
+      - key: GEMINI_API_KEY
+        sync: false
