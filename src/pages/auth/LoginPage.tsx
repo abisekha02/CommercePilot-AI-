@@ -61,28 +61,28 @@ export const LoginPage: React.FC = () => {
               onClick={() => handleQuickDemo('admin')}
               className="bg-brand-50 hover:bg-brand-100 text-brand-700 font-semibold p-2 rounded-xl border border-brand-200 text-left transition cursor-pointer"
             >
-              👑 Administrator
+               Administrator
               <span className="block text-xs text-brand-500 font-normal">Full ERP Access</span>
             </button>
             <button
               onClick={() => handleQuickDemo('manager')}
               className="bg-blue-50 hover:bg-blue-100 text-blue-700 font-semibold p-2 rounded-xl border border-blue-200 text-left transition cursor-pointer"
             >
-              🏬 Store Manager
+               Store Manager
               <span className="block text-xs text-blue-500 font-normal">Catalog & Orders</span>
             </button>
             <button
               onClick={() => handleQuickDemo('warehouse')}
               className="bg-amber-50 hover:bg-amber-100 text-amber-700 font-semibold p-2 rounded-xl border border-amber-200 text-left transition cursor-pointer"
             >
-              📦 Warehouse Staff
+               Warehouse Staff
               <span className="block text-xs text-amber-500 font-normal">Stock & POs</span>
             </button>
             <button
               onClick={() => handleQuickDemo('customer')}
               className="bg-emerald-50 hover:bg-emerald-100 text-emerald-700 font-semibold p-2 rounded-xl border border-emerald-200 text-left transition cursor-pointer"
             >
-              🛍️ Customer
+               Customer
               <span className="block text-xs text-emerald-500 font-normal">Shopper Profile</span>
             </button>
           </div>
